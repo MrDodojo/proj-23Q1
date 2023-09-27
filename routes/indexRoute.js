@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', (req, res) => {
-    res.render('index', { title: 'My Website' });
+router.get('/voorbeeld', (req, res) => {
+    res.render('voorbeeld', { title: 'My Website' });
   });
 
-router.get("/op", (req,res) => {
-    res.render('index', {title: "oopp"})
+router.get("/andere", (req,res) => {
+    res.render('index', {title: "andere pagina maar zelfde html???"})
 })
 
 module.exports = router;
