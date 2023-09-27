@@ -14,9 +14,12 @@ const PORT = 43400;
 const app = express();
 app.set('view engine', 'ejs');
 
-const indexRouter = require('./routes/indexRoute');
+// Statische bestanden in folder "static/" en link "/static/"
+app.use('/static', express.static('static'))
 
-app.use('/', indexRouter);
+// Alle pagina URLS bevattend */ gebruiken route rootRoute
+const Router = require('./routes/rootRoute');
+app.use('/', Router);
 
 app.listen(PORT);
 console.log(`Running on:${PORT}`);
